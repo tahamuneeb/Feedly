@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import FeedlyCore
 
 struct ContentView: View {
+    
+    let api = API()
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(api.url)
         }
         .padding()
     }
