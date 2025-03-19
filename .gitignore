@@ -1,0 +1,7 @@
+xcuserdata/
+DerivedData/
+build/
+*.xcuserstate
+*.log
+*.DS_Store
+Feedly.xcodeproj/project.xcworkspace/xcuserdata/tahamuneeb.xcuserdatad/UserInterfaceState.xcuserstate
