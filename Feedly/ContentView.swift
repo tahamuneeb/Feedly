@@ -10,13 +10,12 @@ import FeedlyCore
 
 struct ContentView: View {
     
-    let api = API()
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text(api.url)
+            Text("Hello World!")
         }
         .padding()
     }
