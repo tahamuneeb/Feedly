@@ -7,4 +7,7 @@
    <FileRef
       location = "group:../Feedly.xctestplan">
    </FileRef>
+   <FileRef
+      location = "group:../FeedlyCoreTests.xctestplan">
+   </FileRef>
 </Workspace>
