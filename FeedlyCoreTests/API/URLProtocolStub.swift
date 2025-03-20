@@ -31,6 +31,9 @@ class URLProtocolStub: URLProtocol {
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
+    
+    override func stopLoading() {
+    }
 }
 
 extension URLProtocolStub {
