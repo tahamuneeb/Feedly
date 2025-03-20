@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Feedly.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../Feedly.xctestplan">
+   </FileRef>
 </Workspace>

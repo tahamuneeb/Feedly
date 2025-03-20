@@ -7,7 +7,45 @@
 		<key>Feedly.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FeedlyCore.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>FeedlyCoreTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A02D4C9B2D8B773D000E5D8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A02D4CAB2D8B773E000E5D8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A02D4CB52D8B773E000E5D8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A02D4DB42D8B7F90000E5D8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A02D4DBB2D8B7F90000E5D8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
