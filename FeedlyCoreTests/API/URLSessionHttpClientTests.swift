@@ -8,24 +8,28 @@
 import XCTest
 import FeedlyCore
 
-class URLProtocolStub: URLProtocol {
-    override class func canInit(with request: URLRequest) -> Bool {
-        return true
-    }
-    
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        return request
-    }
-    
-    override func startLoading() {
-        
-    }
-}
+
 
 final class URLSessionHttpClientTests: XCTestCase {
-
+    
     func test_memoryLeak() {
         _ = makeSUT()
+    }
+    
+    func test_clientGetFromURL_callsGETRequest() {
+        let url = aURL()
+        let sut = makeSUT()
+        
+        let exp = expectation(description: "Wait for request")
+
+        URLProtocolStub.observeRequests { request in
+            XCTAssertEqual(request.url, url)
+            XCTAssertEqual(request.httpMethod, "GET")
+            exp.fulfill()
+        }
+        
+        sut.get(url, completion: { _ in})
+        wait(for: [exp], timeout: 1.0)
     }
     
     // MARK: - Helpers
@@ -34,10 +38,14 @@ final class URLSessionHttpClientTests: XCTestCase {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = URLSession(configuration: configuration)
-
+        
         let sut = URLSessionHttpClient(session: session)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    func aURL() -> URL {
+        URL(string: "https://example.com")!
     }
 }
 
