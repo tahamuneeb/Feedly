@@ -6,6 +6,7 @@
 //
 import Foundation
 
+// Defining a cancelable task so that client can cancel on going request.
 public protocol HttpClientTask {
     func cancel()
 }

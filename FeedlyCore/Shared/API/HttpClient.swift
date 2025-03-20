@@ -7,6 +7,7 @@
 
 import Foundation
 
+// A generic Protocol for HttpClient, this approach will allow to implement Client like URLSession or Alamofire. Domain logic will remain untouched.
 public protocol HttpClient {
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
     
