@@ -12,7 +12,7 @@ public final class FeedDataMapper {
         case invalidData
     }
 
-    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> [FeedModel] {
+    public static func map(_ data: Data, response: HTTPURLResponse) throws -> [FeedModel] {
         guard response.isOK, let root = try? JSONDecoder().decode(Root.self, from: data) else {
             throw Error.invalidData
         }
@@ -53,7 +53,7 @@ fileprivate struct Root: Decodable {
                 height: media.height,
                 creatorName: creatorName,
                 thumbnailUrl: thumnailURL,
-                mediaType: media.type == .video ? .video : .image
+                mediaType: FeedModel.MediaType(rawValue: media.type.rawValue) ?? .image
             )
         } ?? []
     }

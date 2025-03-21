@@ -6,10 +6,28 @@
 //
 import XCTest
 
+func aURL() -> URL {
+    URL(string: "https://example.com")!
+}
+
+func anError() -> NSError {
+    return NSError(domain: "an error", code: 0)
+}
+
+func aData() -> Data {
+    return Data("a data".utf8)
+}
+
 extension XCTestCase {
     func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "Instance was not deallocated, Memory leak found", file: file, line: line)
         }
+    }
+}
+
+extension HTTPURLResponse {
+    convenience init(statusCode: Int) {
+        self.init(url: aURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
     }
 }
