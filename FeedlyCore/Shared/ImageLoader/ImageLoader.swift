@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ImageLoader {
+public protocol ImageLoader {
     typealias Result = Swift.Result<Data, Error>
     
     @discardableResult

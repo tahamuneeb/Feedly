@@ -15,7 +15,7 @@ public class ImageloaderClient: ImageLoader {
     }
     
     @discardableResult
-    func loadImage(from url: URL, completion: @escaping (ImageLoader.Result) -> Void) -> HttpClientTask {
+    public func loadImage(from url: URL, completion: @escaping (ImageLoader.Result) -> Void) -> HttpClientTask {
         let task = client.get(url) { result in
             switch result {
             case let .success((data, _)):

@@ -10,6 +10,7 @@ import Foundation
 public protocol ImageCache {
     typealias Result = Swift.Result<Data, Error>
     
-    func saveImage(_ data: Data, for url: URL) -> Result
-    func loadImage(for url: URL) -> Result
+    @discardableResult
+    func saveImage(_ data: Data, for url: URL) -> ImageCache.Result
+    func loadImage(for url: URL) -> ImageCache.Result
 }
