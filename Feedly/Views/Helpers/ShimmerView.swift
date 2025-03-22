@@ -19,7 +19,7 @@ struct ShimmerView: View {
                         Rectangle()
                             .fill(
                                 LinearGradient(
-                                    gradient: Gradient(colors: [.clear, .white.opacity(0.2), .clear]),
+                                    gradient: Gradient(colors: [.clear, .white.opacity(0.3), .clear]),
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 )
