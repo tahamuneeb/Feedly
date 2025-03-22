@@ -12,7 +12,10 @@ public class AsyncImage {
     private let imageCache: ImageCache
     private let imageLoader: ImageLoader
     
-    public init(imageCache: ImageCache, imageLoader: ImageLoader) {
+    public init(
+        imageCache: ImageCache = ImageCacheClient(cache: DocumentsCacheDirectoryClient()),
+        imageLoader: ImageLoader = ImageloaderClient(client: URLSessionHttpClient(session: URLSession.shared))
+    ) {
         self.imageCache = imageCache
         self.imageLoader = imageLoader
     }

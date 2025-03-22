@@ -10,7 +10,7 @@ import Foundation
 public class ImageloaderClient: ImageLoader {
     private let client: HttpClient
     
-    init(client: HttpClient) {
+    public init(client: HttpClient) {
         self.client = client
     }
     

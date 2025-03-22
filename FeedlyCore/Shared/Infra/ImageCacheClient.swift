@@ -10,7 +10,7 @@ import Foundation
 public class ImageCacheClient: ImageCache {
     let cache: ImageCache
     
-    private init(cache: ImageCache) {
+    public init(cache: ImageCache) {
         self.cache = cache
     }
     
