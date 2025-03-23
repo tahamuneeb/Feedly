@@ -23,6 +23,9 @@ struct FeedListView: View {
                 }
             }
             .navigationTitle("Feedly")
+            .refreshable {
+                viewModel.fetchFeeds()
+            }
             .onAppear {
                 viewModel.fetchFeeds()
             }
@@ -31,8 +34,17 @@ struct FeedListView: View {
                     ProgressView()
                 }
             }
+            .alert("Error", isPresented: Binding<Bool>(
+                get: { viewModel.error != nil },
+                set: { _ in viewModel.clearError() }
+            ), actions: {
+                Button("OK", role: .cancel) { }
+            }, message: {
+                if let errorMessage = viewModel.error {
+                    Text(errorMessage)
+                }
+            })
         }
-        
     }
 }
 
