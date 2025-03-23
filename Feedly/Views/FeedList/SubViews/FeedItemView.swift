@@ -26,7 +26,6 @@ struct FeedItemView: View {
                             CGFloat(feedItem.width) / CGFloat(feedItem.height),
                             contentMode: .fill
                         )
-                        .frame(maxWidth: .infinity)
                 } else {
                     VideoPlayer(player: AVPlayer(url: feedItem.url))
                         .aspectRatio(

@@ -59,10 +59,7 @@ final class FeedDataMapperTests: XCTestCase {
             mediaType: .video
         )
         
-//        let feeds = [feed1.model, feed2.model]
         let json = makeJSON([feed1.json, feed2.json])
-        
-//        let receivedFeeds = try FeedDataMapper.map(json, response: HTTPURLResponse(statusCode: 200))
         
         let statusCodes = [200, 201, 205, 299]
 
@@ -70,8 +67,6 @@ final class FeedDataMapperTests: XCTestCase {
             let result = try FeedDataMapper.map(json, response: HTTPURLResponse(statusCode: code))
             XCTAssertEqual(result, [feed1.model, feed2.model])
         }
-        
-        // XCTAssertEqual(receivedFeeds, feeds)
     }
         
     
@@ -104,7 +99,7 @@ final class FeedDataMapperTests: XCTestCase {
         
         if mediaType == .image {
             json["src"] = [
-                "large": model.url.absoluteString
+                "medium": model.url.absoluteString
             ]
             json["photographer"] = model.creatorName
         } else if mediaType == .video {
