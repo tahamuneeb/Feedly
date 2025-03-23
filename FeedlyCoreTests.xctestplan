@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "CE6C535E-D824-4038-95DD-585E34B2F1F3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random",
+    "threadSanitizerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Feedly.xcodeproj",
+        "identifier" : "A02D4DBB2D8B7F90000E5D8F",
+        "name" : "FeedlyCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}

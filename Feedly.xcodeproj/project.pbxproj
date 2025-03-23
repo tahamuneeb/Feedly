@@ -10,6 +10,8 @@
 		A02D4DBD2D8B7F90000E5D8F /* FeedlyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02D4DB52D8B7F90000E5D8F /* FeedlyCore.framework */; };
 		A02D4DC82D8B7F90000E5D8F /* FeedlyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02D4DB52D8B7F90000E5D8F /* FeedlyCore.framework */; };
 		A02D4DC92D8B7F90000E5D8F /* FeedlyCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A02D4DB52D8B7F90000E5D8F /* FeedlyCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A02D4ED52D903015000E5D8F /* Feedly.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = A02D4ED32D903015000E5D8F /* Feedly.xctestplan */; };
+		A02D4ED62D903015000E5D8F /* FeedlyCoreTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = A02D4ED42D903015000E5D8F /* FeedlyCoreTests.xctestplan */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		A02D4CB62D8B773E000E5D8F /* FeedlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02D4DB52D8B7F90000E5D8F /* FeedlyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeedlyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02D4DBC2D8B7F90000E5D8F /* FeedlyCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedlyCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A02D4ED32D903015000E5D8F /* Feedly.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Feedly.xctestplan; sourceTree = "<group>"; };
+		A02D4ED42D903015000E5D8F /* FeedlyCoreTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedlyCoreTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -157,6 +161,8 @@
 		A02D4C932D8B773D000E5D8F = {
 			isa = PBXGroup;
 			children = (
+				A02D4ED32D903015000E5D8F /* Feedly.xctestplan */,
+				A02D4ED42D903015000E5D8F /* FeedlyCoreTests.xctestplan */,
 				A02D4C9E2D8B773D000E5D8F /* Feedly */,
 				A02D4CAF2D8B773E000E5D8F /* FeedlyTests */,
 				A02D4CB92D8B773E000E5D8F /* FeedlyUITests */,
@@ -368,6 +374,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02D4ED52D903015000E5D8F /* Feedly.xctestplan in Resources */,
+				A02D4ED62D903015000E5D8F /* FeedlyCoreTests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

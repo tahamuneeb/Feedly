@@ -1,0 +1,49 @@
+{
+  "configurations" : [
+    {
+      "id" : "F2AF618D-B34C-4329-B64B-0958D5D116CE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Feedly.xcodeproj",
+      "identifier" : "A02D4C9B2D8B773D000E5D8F",
+      "name" : "Feedly"
+    },
+    "testExecutionOrdering" : "random",
+    "threadSanitizerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Feedly.xcodeproj",
+        "identifier" : "A02D4CAB2D8B773E000E5D8F",
+        "name" : "FeedlyTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Feedly.xcodeproj",
+        "identifier" : "A02D4CB52D8B773E000E5D8F",
+        "name" : "FeedlyUITests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Feedly.xcodeproj",
+        "identifier" : "A02D4DBB2D8B7F90000E5D8F",
+        "name" : "FeedlyCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
