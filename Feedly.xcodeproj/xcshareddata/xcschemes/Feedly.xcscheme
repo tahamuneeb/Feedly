@@ -30,8 +30,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../Feedly.xctestplan"
+            reference = "container:FeedlyCoreTests.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Feedly.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
