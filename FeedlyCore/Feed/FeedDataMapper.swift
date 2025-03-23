@@ -87,6 +87,10 @@ fileprivate struct Media: Decodable {
 // MARK: - Src
 fileprivate struct Src: Decodable {
     let large: URL?
+    
+    enum CodingKeys: String, CodingKey {
+        case large = "medium"
+    }
 }
 
 // MARK: - User

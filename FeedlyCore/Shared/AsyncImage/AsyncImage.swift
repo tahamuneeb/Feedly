@@ -25,6 +25,8 @@ public class AsyncImage {
         switch image {
         case .success:
             return imageCache.loadImagePublisher(for: url)
+                .subscribe(on: DispatchQueue.global())
+                .eraseToAnyPublisher()
         default:
             break
         }
@@ -36,7 +38,7 @@ public class AsyncImage {
             .eraseToAnyPublisher()
     }
 }
- 
+
 extension ImageLoader {
     typealias Publisher = AnyPublisher<Data, Error>
     
@@ -69,4 +71,4 @@ extension ImageCache {
 
 
 
-    
+
