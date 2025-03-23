@@ -9,48 +9,28 @@ import SwiftUI
 import FeedlyCore
 
 struct FeedListView: View {
-    
-    @State var array: [FeedModel] = [
-        FeedModel(
-            id: 1,
-            url: URL(string: "https://images.pexels.com/photos/1366909/pexels-photo-1366909.jpeg?auto=compress&cs=tinysrgb&h=350")!,
-            width: 200,
-            height: 300,
-            creatorName: "Taha",
-            thumbnailUrl: nil,
-            mediaType: .image
-        ),
-        FeedModel(
-            id: 2,
-            url: URL(string: "https://images.pexels.com/photos/1366909/pexels-photo-1366909.jpeg?auto=compress&cs=tinysrgb&h=350")!,
-            width: 200,
-            height: 300,
-            creatorName: "Taha",
-            thumbnailUrl: nil,
-            mediaType: .image
-        ),
-        FeedModel(
-            id: 3,
-            url: URL(string: "https://videos.pexels.com/video-files/3571264/3571264-sd_960_540_30fps.mp4")!,
-            width: 960,
-            height: 540,
-            creatorName: "Taha M",
-            thumbnailUrl: URL(string: "https://fastly.picsum.photos/id/444/200/300.jpg?hmac=xTzo_bbWzDyYSD5pNCUYw552_qtHzg0tQUKn5R6FOM")!,
-            mediaType: .video
-        )
-    ]
+
+    @ObservedObject var viewModel = FeedListViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 20) {
-                    ForEach(array, id: \.id) { feed in
+                    ForEach(viewModel.feeds, id: \.id) { feed in
                         FeedItemView(feedItem: feed)
                             .scaledToFit()
                     }
                 }
             }
             .navigationTitle("Feedly")
+            .onAppear {
+                viewModel.fetchFeeds()
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+            }
         }
         
     }

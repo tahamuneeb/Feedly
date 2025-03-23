@@ -24,7 +24,7 @@ struct FeedItemView: View {
                     AsyncImageView(url: feedItem.url.absoluteString)
                         .aspectRatio(
                             CGFloat(feedItem.width) / CGFloat(feedItem.height),
-                            contentMode: .fit
+                            contentMode: .fill
                         )
                         .frame(maxWidth: .infinity)
                 } else {

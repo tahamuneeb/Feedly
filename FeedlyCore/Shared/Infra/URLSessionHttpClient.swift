@@ -20,13 +20,17 @@ public final class URLSessionHttpClient: HttpClient {
     }
     
     private let session: URLSession
+    private let header: [String: String]?
     
-    public init(session: URLSession) {
+    public init(session: URLSession, header: [String: String]? = nil) {
         self.session = session
+        self.header = header
     }
     
     public func get(_ url: URL, completion: @escaping (HttpClient.Result) -> Void) -> HttpClientTask {
-        let task = session.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = header
+        let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data, let response = response as? HTTPURLResponse {

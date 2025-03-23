@@ -31,12 +31,11 @@ struct AsyncImageView: View {
             if hasFailed {
                 placeholder
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
             } else if let image = image {
                 Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
-                    .clipped()
+                    .scaledToFill()
             } else {
                 ShimmerView()
                     .onAppear {
