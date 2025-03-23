@@ -16,6 +16,7 @@ struct VideoPlayer: UIViewControllerRepresentable {
         let controller = AVPlayerViewController()
         controller.player = player
         controller.showsPlaybackControls = true
+        controller.videoGravity = .resizeAspectFill
         return controller
     }
     
