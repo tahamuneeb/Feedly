@@ -21,7 +21,7 @@ struct AsyncImageView: View {
     
     @State private var cancellables = Set<AnyCancellable>()
     
-    init(url: String, placeholder: Image = Image(systemName: "placeholder")) {
+    init(url: String, placeholder: Image = Image("placeholder")) {
         self.url = url
         self.placeholder = placeholder
     }
