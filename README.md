@@ -1,7 +1,41 @@
 # Feedly
 
 
-This application is a feed viewer that loads image and video feeds from the Pexels backend build by using Test Driven Development Approch (TDD). It provides a seamless user experience with features like video autoplay, image caching, and smooth scrolling. The application is built with a clean architecture, ensuring separation of concerns, testability, and maintainability through the use of **protocols** and adherence to **SOLID principles**.
+This application is a feed viewer that loads image and video feeds from the Pexels backend build by using Test Driven Development Approch (TDD). It provides a seamless user experience with features like video autoplay, image caching, and smooth scrolling. The application is built with a clean architecture, ensuring separation of concerns, testability, and maintainability through the use of **protocols** and adherence to **SOLID principles**. Application Code doesn't contain any of the thirdparty codes or librarys.
+
+## Native Framework used:
+- SwiftUI
+- XCTest
+- Combine
+- Foundation
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    SwiftUI Module->>+FeedlyCore: Requests data
+    FeedlyCore->>+Pexel Backend: Request data via http
+    Pexel Backend-->>-FeedlyCore: Response backs
+    FeedlyCore-->>-SwiftUI Module: Response backs and save into cache
+```
+---
+
+## FlowChart
+
+```mermaid
+flowchart TD
+    urlClient(URLHttpClient) -->|implements| httpClient[HttpClient Protocol]
+
+    AsyncImage(AsyncImage) -->|uses| DocumentsCacheDirectoryClient(DocumentsCacheDirectoryClient)
+    AsyncImage(AsyncImage) -->|uses| urlClient(URLHttpClient)
+
+    DocumentsCacheDirectoryClient(DocumentsCacheDirectoryClient) --> |implements| ImageCache[ImageCache Protocol]
+
+    FeedListVM(FeedListViewModel) --> |uses| urlClient2(URLHttpClient)
+    urlClient2(URLHttpClient) --> |request http data| Backend[Backend]
+    Backend[Backend] --> |tranfers data| FeedDataMapper
+    FeedDataMapper --> |maps data and send to VM| FeedListVM
+```
 
 ---
 
@@ -40,3 +74,4 @@ This application is a feed viewer that loads image and video feeds from the Pexe
    - **Mocking**: Uses protocols to mock dependencies and isolate components for testing.
 
 ---
+
