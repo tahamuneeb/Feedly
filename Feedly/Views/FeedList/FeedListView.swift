@@ -10,10 +10,10 @@ import FeedlyCore
 
 struct FeedListView: View {
     
-    var array: [FeedModel] = [
+    @State var array: [FeedModel] = [
         FeedModel(
             id: 1,
-            url: URL(string: "https://fastly.picsum.photos/id/444/200/300.jpg?hmac=xTzo_bbWzDyYSD5pNCUYw552_qtHzg0tQUKn5R6FOM")!,
+            url: URL(string: "https://images.pexels.com/photos/1366909/pexels-photo-1366909.jpeg?auto=compress&cs=tinysrgb&h=350")!,
             width: 200,
             height: 300,
             creatorName: "Taha",
@@ -22,7 +22,7 @@ struct FeedListView: View {
         ),
         FeedModel(
             id: 2,
-            url: URL(string: "https://fastly.picsum.photos/id/444/200/300.jpg?hmac=xTzo_bbWzDyYSD5pNCUYw552_qtHzg0tQUKn5R6FOM")!,
+            url: URL(string: "https://images.pexels.com/photos/1366909/pexels-photo-1366909.jpeg?auto=compress&cs=tinysrgb&h=350")!,
             width: 200,
             height: 300,
             creatorName: "Taha",
@@ -43,7 +43,7 @@ struct FeedListView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack(spacing: 20) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                     ForEach(array, id: \.id) { feed in
                         FeedItemView(feedItem: feed)
                             .scaledToFit()

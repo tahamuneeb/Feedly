@@ -8,9 +8,25 @@
 import SwiftUI
 import AVKit
 
-struct VideoPlayer: UIViewControllerRepresentable {
+struct VideoPlayer: View {
     
     var player: AVPlayer
+    
+    var body: some View {
+        VideoPlayerView(player: player)
+            .onAppear {
+                player.play()
+            }
+            .onDisappear {
+                player.pause()
+            }
+    }
+        
+}
+
+struct VideoPlayerView: UIViewControllerRepresentable {
+    
+    var player: AVPlayer?
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {
         let controller = AVPlayerViewController()
